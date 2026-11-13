@@ -12,6 +12,7 @@ import com.atul.ecommerce.products.service.ProductService;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.security.core.Authentication;
 
 @RestController
 @RequestMapping ("/api") 
@@ -25,7 +26,9 @@ public class ProductController {
     }
 
     @GetMapping ("/products")
-    public List<Product> getProducts() {
+    public List<Product> getProducts(Authentication authentication) {
+        System.out.println("Authenticated user: " + authentication.getName().toString());
+        System.out.println("Authorities: " + authentication.getAuthorities());
         return productService.getAllProducts();
     }
 

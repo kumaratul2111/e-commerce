@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce - Products</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<div class="page">
+    <header class="topbar">
+        <div>
+            <h1>Our Products</h1>
+            <p class="subtitle">Choose a quantity for each product and click its Add to cart button. Review your cart and place your order when ready.</p>
+        </div>
+        <button id="logoutButton" class="logout" type="button">Logout</button>
+    </header>
+
+    <main>
+        <p id="message" class="message" role="status" aria-live="polite"></p>
+        <section aria-labelledby="catalogHeading">
+            <h2 id="catalogHeading" class="section-heading">Product catalog</h2>
+            <div id="products" class="products"></div>
+        </section>
+
+        <section class="cart-section" aria-labelledby="cartHeading">
+            <div class="cart-heading">
+                <h2 id="cartHeading">Your cart</h2>
+                <span class="cart-count"><span id="cartCount">0</span> item(s)</span>
+            </div>
+            <div id="cartItems" class="cart-items">
+                <p class="empty-cart">Your cart is empty. Add products to get started.</p>
+            </div>
+            <div class="cart-footer">
+                <strong>Total: <span id="cartTotal">₹0.00</span></strong>
+                <button id="placeOrderButton" class="order-button" type="button" disabled>Place order</button>
+            </div>
+            <p class="cart-note">The final price and stock availability should always be validated by the backend.</p>
+        </section>
+    </main>
+</div>
+<script src="/js/products.js"></script>
+</body>
+</html>
